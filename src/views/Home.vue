@@ -3,8 +3,8 @@
     b-row
       b-col(cols="12" md="6" lg="3" v-for="(item, index) in items" :key="index")
         b-card(:title="item.name" :img-src="item.img" img-top :sub-title="'$'+item.price")
-          b-button(variant="primary")
-            font-awesome-icon(:icon="['fas','shopping-cart']")
+          b-button(variant="primary" @click="addCart(item)")
+            font-awesome-icon(:icon="['fas', 'shopping-cart']")
             | &nbsp;加入購物車
 </template>
 
@@ -35,6 +35,12 @@ export default {
           price: 28500
         }
       ]
+    }
+  },
+  methods: {
+    addCart (item) {
+      // 呼叫 mutations
+      this.$store.commit('addCart', item)
     }
   }
 }
