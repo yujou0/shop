@@ -15,6 +15,8 @@
             router-link(to='/') Home
             | &nbsp;|&nbsp;
             router-link(to='/about') About
+            | &nbsp;|&nbsp;
+            router-link(to='/cart') Cart
         b-col(cols="12")
           router-view
 </template>
